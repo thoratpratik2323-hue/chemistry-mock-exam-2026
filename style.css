@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --paper-white: #ffffff;
+    --paper-edge: #f1f5f9;
+    --ink-black: #1e293b;
+    --accent-blue: #2563eb;
+    --border-gray: #cbd5e1;
+}
+
+body {
+    background-color: #f8fafc;
+    color: var(--ink-black);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.exam-paper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--paper-white);
+    padding: 4rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-gray);
+    position: relative;
+}
+
+.exam-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--accent-blue);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px double var(--border-gray);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Crimson Pro', serif;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.sub-header {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.timer-section {
+    position: sticky;
+    top: 10px;
+    float: right;
+    background: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    border: 1px solid var(--border-gray);
+    z-index: 100;
+}
+
+.section-title {
+    background: #f8fafc;
+    padding: 0.5rem 1rem;
+    border-left: 5px solid var(--accent-blue);
+    margin: 2rem 0 1rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.question {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.q-num {
+    font-weight: 800;
+    margin-right: 0.5rem;
+}
+
+.marks {
+    float: right;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.answer-toggle {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 4px 12px;
+    background: #eff6ff;
+    color: var(--accent-blue);
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.solution {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    color: #166534;
+    font-size: 0.95rem;
+}
+
+.solution.active {
+    display: block;
+}
+
+.footer {
+    margin-top: 4rem;
+    text-align: center;
+    font-style: italic;
+    color: #94a3b8;
+}
+
+@media print {
+
+    .timer-section,
+    .answer-toggle {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .exam-paper {
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        max-width: 100%;
+    }
+}
